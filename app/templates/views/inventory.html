@@ -1,0 +1,62 @@
+{% extends 'base.html' %} {% block title %}Inventory{% endblock title %} {% set active_page = "inventory" %} {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/dataTables.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/responsive.bootstrap4.min.css') }}"> {% endblock head %} {% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="margin mb-2">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm mr-2" data-toggle="modal" data-target="#modal-add-device">
+                  Add Device(s)
+                </button>
+                <button type="button" class="btn btn-danger btn-sm">Remove Device</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card table table-responsive">
+            <div class="card-header bg-lightblue">
+                <h3 class="card-title">Inventory Table</h3>
+            </div>
+
+            <div class="card-body">
+                <table id="inventory-table" class="table table-bordered table-striped">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include '/modals/_inventory-modal.html'%} 
+{% endblock content %}
+{% block script %}
+<script src="{{ url_for('static', filename = 'js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/responsive.bootstrap4.min.js') }}"></script>
+
+<script>
+    $('#inventory-table').dataTable({
+
+        "ajax": {
+            url: "api/inventory",
+            "dataType": "json",
+            "dataSrc": "data",
+            "contentType": "application/json"
+        },
+        columns: [{
+            title: "Hostname"
+        }, {
+            title: "IP Address"
+        }, {
+            title: "Platform"
+        }, {
+            title: "Role"
+        }, {
+            title: "Groups"
+        }, ]
+    });
+</script>
+
+{% endblock script %}

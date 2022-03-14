@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+
+    <!--Font Awesome CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/all.min.css') }}">
+
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/adminlte.min.css') }}">
+
+    {% block head %}{% endblock head %}
+    <title>PFNA | {% block title%} {% endblock title %}</title>
+</head>
+
+<body class="hold-transition layout-top-nav layout-footer-fixed">
+    <div class="wrapper">
+        {% include 'partials/_navbar.html' %}
+        <div class="container mt-3">
+            {% include 'partials/_breadcrumb.html' %}
+            {% block content %} {% endblock content %}
+        </div>
+        {% include 'partials/_footer.html' %}
+    </div>
+    <!--Custom JS-->
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}">
+    </script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/bootstrap.bundle.min.js') }}"></script>
+    <!-- AdminLTE JS ! -->
+    <script src="{{ url_for('static', filename = 'js/adminlte.min.js') }}"></script>
+    </script>
+
+    {% block script %} {% endblock script %}
+</body>
+
+</html>

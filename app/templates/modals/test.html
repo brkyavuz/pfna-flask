@@ -1,0 +1,55 @@
+<form>
+<div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Add Device to Inventory</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="hostname">Hostname</label>
+        <input type="text" class="form-control-sm" id="hostname" placeholder="Device Hostname">
+      </div>
+      <div class="form-group">
+          <label for="ipaddr">IP Address</label>
+          <input type="text" class="form-control-sm" id="ipaddr" placeholder="Device IP address">
+      </div>
+      <div class="form-group">
+        <label>Platform</label>
+        <select class="form-control-sm select2" style="width: 100%;">
+          <option>ios</option>
+          <option>iosxr</option>
+          <option>nxos</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Role</label>
+        <select class="form-control-sm select2" style="width: 100%;">
+          <option>router</option>
+          <option>switch</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ipaddr">Location</label>
+        <input type="text" class="form-control-sm" id="location" placeholder="Device Location">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <div class="input-group">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="exampleInputFile">
+                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+            </div>
+            <div class="input-group-append">
+                <span class="input-group-text">Upload</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+</div>

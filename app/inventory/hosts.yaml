@@ -1,0 +1,36 @@
+# hosts.yaml
+---
+
+R1:
+  hostname: 192.168.128.41
+  platform: ios
+  groups:
+    - ios
+  data:
+    role: router
+
+R2:
+  hostname: 192.168.128.42
+  platform: ios
+  groups:
+    - ios
+  data:
+    role: router
+
+R3:
+  hostname: 192.168.128.43
+  platform: ios
+  groups:
+    - ios
+  data:
+    role: router
+
+R4:
+  hostname: 192.168.128.44
+  platform: ios
+  groups:
+    - ios
+  data:
+    role: router
+
+...
